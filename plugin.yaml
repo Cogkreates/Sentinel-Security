@@ -1,0 +1,12 @@
+name: sentinel-security
+version: 1.1.1
+description: "Security guard for Hermes Agent. Scans scripts before the agent runs them (blocks or asks for approval), plus file hashing with optional VirusTotal lookup."
+author: "Team Sentinel"
+requires_hermes: ">=0.23.0"
+provides_tools:
+  - analyze_file
+  - scan_script
+provides_hooks:
+  - pre_tool_call
+config_schema:
+  guard: {type: str, choices: [on, off], default: "on", label: "Guard", description: "Turn the pre-run script guard on or off"}
